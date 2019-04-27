@@ -1,12 +1,13 @@
 {
     "app-id" : "org.gnome.IconPreview",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.30",
+    "runtime-version" : "3.32",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-icon-preview",
     "finish-args" : [
         "--share=ipc",
-        "--socket=x11",
+        "--device=dri",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--filesystem=home",
         "--filesystem=xdg-run/dconf",
@@ -34,8 +35,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.30/libdazzle-3.30.2.tar.xz",
-                    "sha256" : "78770eae9fa15ac5acb9c733d29459330b2540affbf72933119e36dbd90b36d5"
+                    "url" : "https://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.32/libdazzle-3.32.1.tar.xz",
+                    "sha256" : "238da19fdcc3ae9bb0c2d781d099fb8c6ec70c4dd3dffad80d230344ecc3f972"
                 }
             ]
         },
@@ -49,8 +50,8 @@
                 {
                     "type" : "git",
                     "url" : "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag" : "v0.0.7",
-                    "commit" :  "fac9fa59a83f47655d604796632a932d58cf60bb"
+                    "tag" : "v0.0.9",
+                    "commit" :  "56b0aa62f6251ee19a88fc208b7ca8dcf9c9633c"
                 }
             ],
             "cleanup" : [
@@ -64,8 +65,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/ZanderBrown/icon-tool.git",
-                    "tag" : "0.9.2",
-                    "commit" : "aa7a576c4f5afa062826e16e399f734ca343302e"
+                    "tag" : "0.9.4",
+                    "commit" : "81574315e39224d65ee6fd055791b70e2248330c"
                 }
             ]
         }
