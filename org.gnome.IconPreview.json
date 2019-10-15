@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.IconPreview",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.32",
+    "runtime-version" : "3.34",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-icon-preview",
     "finish-args" : [
@@ -9,11 +9,7 @@
         "--device=dri",
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--filesystem=home",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=home"
     ],
     "cleanup" : [
         "/include",
@@ -35,8 +31,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.32/libdazzle-3.32.1.tar.xz",
-                    "sha256" : "238da19fdcc3ae9bb0c2d781d099fb8c6ec70c4dd3dffad80d230344ecc3f972"
+                    "url" : "https://download.gnome.org/sources/libdazzle/3.34/libdazzle-3.34.1.tar.xz",
+                    "sha256" : "3d981cbb9d9bb87bfaff7bfd44d9847223b3ef81e69225e4d1f6ac725a669505"
                 }
             ]
         },
@@ -44,14 +40,16 @@
             "name" : "libhandy",
             "buildsystem" : "meson",
             "config-opts": [
-                "-Dglade_catalog=disabled"
+                "-Dglade_catalog=disabled",
+                "-Dexamples=false",
+                "-Dtests=false"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag" : "v0.0.9",
-                    "commit" :  "56b0aa62f6251ee19a88fc208b7ca8dcf9c9633c"
+                    "tag" : "v0.0.11",
+                    "commit": "f5909a897f70143bdd2f89f47a63c1bf848330ce"
                 }
             ],
             "cleanup" : [
